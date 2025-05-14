@@ -1,0 +1,28 @@
+.budget-card{
+  display: flex;
+  padding: 10px;
+  box-shadow: 2.8px 3.2px 5.2px -1.7px;
+  border-radius: 10px;
+}
+
+.budget-card,.budget-item{
+  justify-content: space-around;
+}
+
+.budget-item {
+  margin: 15px 0;
+}
+
+.budget-item h4 {
+  margin: 0 0 5px;
+  font-size: 0.9rem;
+  color: #666;
+}
+
+
+.budget-text {
+  display: block;
+  margin-top: 5px;
+  font-size: 0.8rem;
+  color: #666;
+}

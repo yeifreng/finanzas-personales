@@ -19,6 +19,10 @@ export const routes: Routes = [
     loadComponent: () => import('./expense/pages/expense/expense.component')
   },
   {
+    path:'user',
+    loadComponent: () => import('./auth/pages/user/user.component')
+  },
+  {
     path:'**',
     loadComponent:() => import('./dashboard/pages/dashboard/dashboard.component')
   }

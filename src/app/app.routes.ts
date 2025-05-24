@@ -11,6 +11,14 @@ export const routes: Routes = [
     loadComponent: () => import('./income/pages/income/income.component')
   },
   {
+    path:'login',
+    loadComponent: () => import('./auth/pages/login/login.component')
+  },
+  {
+    path:'register',
+    loadComponent: () => import('./auth/pages/register/register.component')
+  },
+  {
     path:'categoria',
     loadComponent: () => import('./category/pages/category/category.component')
   },

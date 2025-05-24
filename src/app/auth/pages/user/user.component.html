@@ -1,102 +1,28 @@
+
+
+
+<div class="d-flex flex-column min-vh-100">
+<app-navbar></app-navbar>
 <section class="container">
-  <div class="row  pt-3">
+  <div class="row pt-3 d-flex justify-content-between">
+    <!-- ------------------------------- seccion uno perfil de usuario -->
     <div class="col-sm-12 col-md-4 col-lg-3 mb-3">
-      <div class="card">
-        <div class="d-flex justify-content-center mt-3">
-          <img style="max-width: 150px;"
-          src="../../../../assets/logo/user.svg"
-          class="card-img-top"
-          alt="..."
-        />
-        </div>
-        <div class="card-body">
-          <h5 class="card-title text-center mb-3">Yeifren Garcia</h5>
-          <ul class="list-group list-group-flush">
-            <li class="list-group-item"><i class="fa fa-user"></i> yeifreng</li>
-            <li class="list-group-item">
-              <i class="fa fa-envelope"></i> yeifrenjosegmail.com
-            </li>
-            <li class="list-group-item">A third item</li>
-          </ul>
-        </div>
-      </div>
+    <app-profile></app-profile>
     </div>
+
+        <!-- ------------------------------- seccion dos actualizar perfil de usuario -->
+
     <div class="col-sm-12 col-md-4 col-lg-5 mb-3">
-      <div>
-      <h3 class="text-muted mb-3">Editar perfil</h3>
+      <app-update-profile></app-update-profile>
     </div>
-      <form class="">
-        <div class="row g-3 mb-3">
-          <div class="col-auto">
-            <label for="nombre" class="form-label fs-sm text-muted" style="font-size: 0.875rem;"
-              ><strong>Nombre</strong></label
-            >
-            <input
-              type="text"
-              class="form-control"
-              id="nombre"
-              placeholder="Nombre"
-            />
-          </div>
-          <div class="col-auto">
-            <label for="apellido" class="form-label text-muted" style="font-size: 0.875rem;"
-              ><strong>Apellido</strong></label
-            >
-            <input
-              type="text"
-              class="form-control"
-              id="apellido"
-              placeholder="Apellido"
-            />
-          </div>
-        </div>
-        <div class="mb-3">
-          <label for="email" class="form-label text-muted" style="font-size: 0.875rem;"
-              ><strong>Email</strong></label
-            >
-          <input
-            type="email"
-            class="form-control"
-            id="email"
-            placeholder="name@example.com"
-          />
-        </div>
-        <div class="mb-3">
-          <input type="button" class="form-control btn btn-success" value="Guardar cambios">
-        </div>
-      </form>
-    </div>
+
+        <!-- ------------------------------- seccion tres cambio de contraseña de usuario -->
     <div class="col-sm-12 col-md-4 col-lg-3 mb-3">
-      <div>
-      <h3 class="text-muted mb-3">Cambiar contraseña</h3>
+      <app-pwd-profile></app-pwd-profile>
     </div>
-      <form class="">
-        <div class="mb-3">
-          <label for="actual" class="form-label text-muted" style="font-size: 0.875rem;"
-              ><strong>Contraseña actual</strong></label
-            >
-          <input
-            type="password"
-            class="form-control"
-            id="actual"
-            placeholder="********"
-          />
-        </div>
-        <div class="mb-3">
-          <label for="nueva" class="form-label text-muted" style="font-size: 0.875rem;"
-              ><strong>Nueva contraseña</strong></label
-            >
-          <input
-            type="password"
-            class="form-control"
-            id="nueva"
-            placeholder="********"
-          />
-        </div>
-        <div class="mb-3">
-          <input type="button" class="form-control btn btn-outline-dark" value="Cambiar contraseña">
-        </div>
-      </form>
-    </div>
+
   </div>
 </section>
+
+<app-footer class="mt-auto"></app-footer>
+</div>

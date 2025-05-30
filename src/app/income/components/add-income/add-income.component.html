@@ -1,39 +1,77 @@
-  <section class="container-fluid d-flex justify-content-center pb-4">
+<section class="container-fluid d-flex justify-content-center pb-4">
   <div class="card" style="width: 500px">
     <div class="card-header">
       <h6 class="text-muted"><strong>Ingreso</strong></h6>
     </div>
     <div class="card-body">
-      <form action="">
         <div class="row">
-          <label for="inputName" class="col-sm-4 col-form-label">Categoria:</label>
-
-          <div class=" input-group mb-3">
-            <select class="form-select" aria-label="Default select example">
+          <label for="inputName" class="col-sm-4 col-form-label"
+            >Categoria:</label
+          >
+          <div class="input-group mb-3">
+            <select
+              class="form-select"
+              aria-label="Default select example"
+              #txtCategory
+              [value]="category()"
+              (input)="category.set(txtCategory.value)"
+            >
               <option selected>Seleccione una categoria...</option>
-              <option value="1">Salario</option>
-              <option value="2">Comisiones</option>
-              <option value="3">Bonos</option>
+              @for (category of listCategory; track category.id) {
+              <option value="{{ category.id }}">{{ category.name }}</option>
+              }
             </select>
           </div>
 
-          <label for="inputName" class="col-sm-4 col-form-label">Descripción:</label>
+          <label for="inputName" class="col-sm-4 col-form-label"
+            >Descripción:</label
+          >
           <div class="input-group mb-3">
-            <input type="text" class="form-control" placeholder="Ej: Pago de quincena..."/>
+            <input
+              type="text"
+              class="form-control"
+              placeholder="Ej: Pago de quincena..."
+              #txtDescription
+              [value]="description()"
+              (input)="description.set(txtDescription.value)"
+            />
           </div>
 
           <label for="inputName" class="col-sm-4 col-form-label">Monto:</label>
           <div class="input-group mb-3">
-            <input type="text" class="form-control" placeholder="Valor ingresado..."/>
+            <input
+              type="text"
+              class="form-control"
+              placeholder="Valor ingresado..."
+              #txtAmount
+              [value]="amount()"
+              (input)="amount.set(+txtAmount.value)"
+            />
           </div>
 
-          <label for="inputName" class="col-sm-4 col-form-label">Fecha:</label>
+          <label for="inputDate" class="col-sm-4 col-form-label">Fecha:</label>
           <div class="input-group mb-3">
-            <input type="text" class="form-control" placeholder="dd/mm/aaaa"/>
+            <input
+              type="date"
+              id="inputDate"
+              class="form-control"
+              placeholder="dd/mm/aaaa"
+              #txtDate
+              [value]="date()"
+              (input)="date.set(txtDate.value)"
+            />
           </div>
 
+          <div class="input-group mb-3">
+            <button
+              (click)="addIncome()"
+              class="form-control btn btn-primary"
+              type="button"
+            >
+              Agregar
+            </button>
+          </div>
         </div>
-      </form>
     </div>
   </div>
 </section>

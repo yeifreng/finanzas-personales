@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, input } from '@angular/core';
+import { Expense } from '../../../models/expense.interface';
 
 @Component({
   selector: 'app-list-expense',
@@ -8,5 +9,7 @@ import { Component } from '@angular/core';
   styleUrl: './list-expense.component.css'
 })
 export class ListExpenseComponent {
+
+  listExpense = input<Expense[]>()
 
 }

@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, input } from '@angular/core';
+import { Income } from '../../../models/income.interface';
 
 @Component({
   selector: 'app-list-income',
@@ -8,5 +9,5 @@ import { Component } from '@angular/core';
   styleUrl: './list-income.component.css'
 })
 export class ListIncomeComponent {
-
+listIncome = input<Income[]>()
 }

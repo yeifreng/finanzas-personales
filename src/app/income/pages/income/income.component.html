@@ -11,11 +11,11 @@
 
   <!-- ---------------------------------------------- Seccion uno formulario de agregar ingresos -->
 
-<app-add-income></app-add-income>
+<app-add-income (newIncome)="addIncome($event)"></app-add-income>
 
 <!-- -------------------------------------------------- seccion dos tabla de listado de ingresos -->
 
-<app-list-income></app-list-income>
+<app-list-income [listIncome]="listIncome()"></app-list-income>
 
 <app-footer class="mt-auto"></app-footer>
 </div>

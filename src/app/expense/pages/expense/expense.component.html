@@ -11,12 +11,12 @@
   </section>
 
   <!-- ---------------------------------------------- Seccion uno formulario de agregar gastos -->
-<app-add-expense></app-add-expense>
+<app-add-expense (newExpense)="addExpense($event)"></app-add-expense>
 
 
 <!-- -------------------------------------------------- seccion dos tabla de listado gastos -->
 
-<app-list-expense></app-list-expense>
+<app-list-expense [listExpense]="listExpense()"></app-list-expense>
 
 <app-footer class="mt-auto"></app-footer>
 </div>

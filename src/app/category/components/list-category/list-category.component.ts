@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, input } from '@angular/core';
 import { RouterLink } from '@angular/router';
+import { Category } from '../../../models/category.interface';
 
 @Component({
   selector: 'app-list-category',
@@ -9,5 +10,7 @@ import { RouterLink } from '@angular/router';
   styleUrl: './list-category.component.css'
 })
 export class ListCategoryComponent {
+
+  listCategory = input<Category[]>()
 
 }

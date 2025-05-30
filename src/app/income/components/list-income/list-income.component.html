@@ -17,30 +17,16 @@
           </tr>
         </thead>
         <tbody>
+          @for (income of listIncome(); track income.id) {
           <tr>
-            <th scope="row">1</th>
-            <td>Salario</td>
-            <td>pago de quincena</td>
-            <td>700000</td>
-            <td>15/05/2025</td>
+            <th scope="row">{{income.id}}</th>
+            <td>{{income.category}}</td>
+            <td>{{income.description}}</td>
+            <td>{{income.amount}}</td>
+            <td>{{income.date}}</td>
             <td><a href="" class="btn btn-success"><i class="fa fa-pen-to-square"></i></a>&nbsp;<a href="" class="btn btn-danger"><i class="fa fa-trash"></i></a></td>
           </tr>
-          <tr>
-            <th scope="row">2</th>
-            <td>Comision</td>
-            <td>pago de comision</td>
-            <td>200000</td>
-            <td>15/05/2025</td>
-            <td><a href="" class="btn btn-success"><i class="fa fa-pen-to-square"></i></a>&nbsp;<a href="" class="btn btn-danger"><i class="fa fa-trash"></i></a></td>
-          </tr>
-          <tr>
-            <th scope="row">3</th>
-            <td>Bono</td>
-            <td>Bono de sodexo</td>
-            <td>232000</td>
-            <td>16/05/2025</td>
-            <td><a href="" class="btn btn-success"><i class="fa fa-pen-to-square"></i></a>&nbsp;<a href="" class="btn btn-danger"><i class="fa fa-trash"></i></a></td>
-          </tr>
+          }
         </tbody>
       </table>
     </div>

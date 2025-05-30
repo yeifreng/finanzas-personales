@@ -4,36 +4,73 @@
       <h6 class="text-muted"><strong>Gasto</strong></h6>
     </div>
     <div class="card-body">
-      <form action="">
-        <div class="row">
-          <label for="inputName" class="col-sm-4 col-form-label">Categoria:</label>
-
-          <div class=" input-group mb-3">
-            <select class="form-select" aria-label="Default select example">
-              <option selected>Seleccione una categoria...</option>
-              <option value="1">Servicios</option>
-              <option value="2">Comida</option>
-              <option value="3">Bancos</option>
-            </select>
-          </div>
-
-          <label for="inputName" class="col-sm-4 col-form-label">Descripción:</label>
-          <div class="input-group mb-3">
-            <input type="text" class="form-control" placeholder="Ej: Pago de la energia..."/>
-          </div>
-
-          <label for="inputName" class="col-sm-4 col-form-label">Monto:</label>
-          <div class="input-group mb-3">
-            <input type="text" class="form-control" placeholder="Valor pagado..."/>
-          </div>
-
-          <label for="inputName" class="col-sm-4 col-form-label">Fecha:</label>
-          <div class="input-group mb-3">
-            <input type="text" class="form-control" placeholder="dd/mm/aaaa"/>
-          </div>
-
+      <div class="row">
+        <label for="inputName" class="col-sm-4 col-form-label"
+          >Categoria:</label
+        >
+        <div class="input-group mb-3">
+          <select
+            class="form-select"
+            aria-label="Default select example"
+            #txtCategory
+            [value]="category()"
+            (input)="category.set(txtCategory.value)"
+          >
+            <option selected>Seleccione una categoria...</option>
+            @for (category of listCategory; track category.id) {
+            <option value="{{ category.id }}">{{ category.name }}</option>
+            }
+          </select>
         </div>
-      </form>
+
+        <label for="inputName" class="col-sm-4 col-form-label"
+          >Descripción:</label
+        >
+        <div class="input-group mb-3">
+          <input
+            type="text"
+            class="form-control"
+            placeholder="Ej: Pago de la energia..."
+            #txtDescription
+            [value]="description()"
+            (input)="description.set(txtDescription.value)"
+          />
+        </div>
+
+        <label for="inputName" class="col-sm-4 col-form-label">Monto:</label>
+        <div class="input-group mb-3">
+          <input
+            type="text"
+            class="form-control"
+            placeholder="Valor pagado..."
+            #txtAmount
+            [value]="amount()"
+            (input)="amount.set(+txtAmount.value)"
+          />
+        </div>
+
+        <label for="inputDate" class="col-sm-4 col-form-label">Fecha:</label>
+        <div class="input-group mb-3">
+          <input
+            type="date"
+            id="inputDate"
+            class="form-control"
+            #txtDate
+            [value]="date()"
+            (input)="date.set(txtDate.value)"
+          />
+        </div>
+
+        <div class="input-group mb-3">
+          <button
+            (click)="addExpense()"
+            type="button"
+            class="form-control btn btn-primary"
+          >
+            Agregar
+          </button>
+        </div>
+      </div>
     </div>
   </div>
 </section>

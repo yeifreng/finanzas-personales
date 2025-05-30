@@ -11,11 +11,11 @@
 
 <!-- -------------------------------------------------- formulario de agregar categoria -->
 
-<app-add-category></app-add-category>
+<app-add-category (newCategory)="addCategory($event)"></app-add-category>
 
 <!-- -------------------------------------------------- tabla de listado de categorias -->
 
-<app-list-category></app-list-category>
+<app-list-category [listCategory] ="listCategory()"></app-list-category>
 
 
 <app-footer class="mt-auto"></app-footer>

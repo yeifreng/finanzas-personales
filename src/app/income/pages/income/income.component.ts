@@ -1,8 +1,10 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { AddIncomeComponent } from '../../components/add-income/add-income.component';
 import { ListIncomeComponent } from '../../components/list-income/list-income.component';
 import { NavbarComponent } from '../../../shared/components/navbar/navbar.component';
 import { FooterComponent } from '../../../shared/components/footer/footer.component';
+import { IncomeService } from '../../service/income.service';
+import { Income } from '../../../models/income.interface';
 
 @Component({
   selector: 'app-income',
@@ -17,5 +19,13 @@ import { FooterComponent } from '../../../shared/components/footer/footer.compon
   styleUrl: './income.component.css'
 })
 export default class IncomeComponent {
+
+  incomeService = inject(IncomeService)
+
+  listIncome = this.incomeService.incomes;
+
+  addIncome(income: Income){
+    return this.incomeService.addIncome(income)
+  }
 
 }

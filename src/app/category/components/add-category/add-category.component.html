@@ -4,21 +4,26 @@
       <h6 class="text-muted"><strong>Categoria</strong></h6>
     </div>
     <div class="card-body">
-      <form action="">
+
         <div class="row">
           <label for="inputName" class="col-sm-4 col-form-label">Nombre:</label>
 
           <div class="input-group mb-3">
-            <input type="text" class="form-control" placeholder="Agrear una categoria..." aria-label="categoria" aria-describedby="buttonCategory"/>
-
-            <button class="btn btn-primary" type="button" id="buttonCategory">
-
+            <input
+              type="text"
+              class="form-control"
+              placeholder="Agrear una categoria..."
+              aria-label="categoria"
+              aria-describedby="buttonCategory"
+              #txtName
+              [value]="name()"
+              (input)="name.set(txtName.value)"
+            />
+            <button (click)="addCategory()" class="btn btn-primary" type="button" id="buttonCategory">
               <i class="fa-solid fa-plus"></i>
-
             </button>
           </div>
         </div>
-      </form>
     </div>
   </div>
 </section>
